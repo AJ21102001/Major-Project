@@ -1,24 +1,37 @@
 const User = require('../models/user');
 
-module.exports.profile = function(req, res){
-    User.findById(req.params.id).then((user)=>{
+module.exports.profile = async function(req, res){
+
+    try{
+        let user = await User.findById(req.params.id);
+
         return res.render('usersProfile', {
             title: 'Ankit',
             profile_user: user
         });
-    });    
+
+    }catch(err){
+        console.log('Error', err);
+        return;
+    }
+
 }
 
-module.exports.update = function(req,res){
-    if(req.user.id == req.params.id){
-        User.findByIdAndUpdate(req.params.id, req.body).then((user)=>{
+module.exports.update = async function(req,res){
+    
+    try{
+        if(req.user.id == req.params.id){
+            let user = await User.findByIdAndUpdate(req.params.id, req.body);
             return res.redirect('back');
-        }).catch((err)=>{
-            console.log("Cannot Update the User");
-        });
-    }else{
-        return res.status(401).send('Unauthorized');
+        }else{
+            return res.status(401).send('Unauthorized');
+        }
+
+    }catch(err){
+        console.log('Error', err);
+        return;
     }
+
 }
 
 //Render Sign Up
@@ -42,32 +55,37 @@ module.exports.signIn = function(req, res){
 }
 
 //Action for SignUp
-module.exports.create = function(req, res){
+module.exports.create = async function(req, res){
     if(req.body.password != req.body.confirm_password){
         return res.redirect('back');
     }
-    
-    User.findOne({email: req.body.email},).then((user) => {
+
+    try{
+        let user = await User.findOne({email: req.body.email},);
+        
         if(!user){
-            User.create(req.body).then((user) => {
-                return res.redirect('/users/sign-in');
-            }).catch((err) => {console.log("Error in Creating a SignUp"); return;});
+             let user = User.create(req.body);
+             return res.redirect('/users/sign-in');
         }else{
             return res.redirect('back');
         }
-    }).catch((err) => {console.log("Error in Creating a SignUp"); return;});
+
+    }catch(err){
+        console.log('Error', err);
+        return;
+    }
 }
 
 //Action for SignIn (Create Sessions)
 module.exports.createSession = function(req, res){
+    req.flash('success', 'Logged In Successfully');
     return res.redirect('/');
 }
 
 module.exports.destroySession = function(req, res, next){
     req.logout(function (err) {
-        if (err) {
-          return next(err);
-        }
+        if (err) return next(err);
+        req.flash('success', 'You have Logged Out Successfully');
         return res.redirect("/");
     });
 }

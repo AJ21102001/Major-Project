@@ -1,30 +1,45 @@
 const Post = require('../models/post');
 const Comment = require('../models/comment');
 
-module.exports.create = function(req,res){
-    Post.create({
-        content: req.body.content,
-        user: req.user._id
-    }).then((user) => {
+module.exports.create = async function(req,res){
+
+    try{
+        await Post.create({
+            content: req.body.content,
+            user: req.user._id
+        });
+
+        req.flash('success', "Post Published");
         return res.redirect('back');
-    }).catch((err) => {console.log("Error in Creating a Post"); return;});
+
+    }catch(err){
+        req.flash('error', err);
+        return res.redirect('back');
+    }
+
 }
 
-module.exports.destroy = function(req, res) {
-    Post.findById(req.params.id).then((post) => {
+module.exports.destroy = async function(req, res) {
+    
+    try{
+        let post = await Post.findById(req.params.id);
+        
         if(post.user == req.user.id){
-            Post.deleteOne({_id: req.params.id}).catch((error) => {
-                console.log("Error in Deleting Post in Destroy");
-            });
-            Comment.deleteMany({post: req.params.id}).catch((err) => {
-                console.log("Error in Deleting Comment in Destroy");
-                return;
-            });
+            await Post.deleteOne({_id: req.params.id});
+            await Comment.deleteMany({post: req.params.id});
+
+            req.flash('success', "Post Deleted");
             return res.redirect('back');
         }else{
+            req.flash('error', "Can't Delete It");
             return res.redirect('back');
         }
-    });
+    
+    }catch(err){
+        req.flash('error', err);
+        return;
+    }
+
 }
 
 
