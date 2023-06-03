@@ -25,7 +25,10 @@ const customMware = require('./config/middleware');
 app.use(express.urlencoded());
 app.use(cookieParser());
 
-app.use(express.static('./assets'))
+app.use(express.static('./assets'));
+//Make the Uploads Path available to the browser
+app.use('/uploads', express.static(__dirname + '/uploads'));
+
 app.use(expressLayouts);
 //Extracts styles and Script from subpages to Layouts
 app.set('layout extractStyles', true);
