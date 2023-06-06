@@ -1,4 +1,5 @@
 const express = require('express');
+const http = require('http');
 const cookieParser = require('cookie-parser');
 const app = express();
 const port = 8000;
@@ -15,6 +16,19 @@ const MongoStore = require('connect-mongo')(session);
 //const sassMiddleware = require('node-sass');
 const flash = require('connect-flash');
 const customMware = require('./config/middleware');
+
+
+// const chatServer = require('http').Server(app);
+// const chatSockets = require('./config/chat_sockets').chatSockets(chatServer);
+// chatServer.listen(3000);
+// console.log('Chat Server Running at Port 3000');
+
+const chatSockets = require('./config/chat_sockets').chatSockets;
+const chatServer = http.createServer(app);
+chatSockets(chatServer);
+chatServer.listen(9000, () => {
+  console.log(`Chat Server Running at Port ${9000}`);
+});
 
 // app.use(sassMiddleware({
 //     src: '/assets/scss',
