@@ -1,15 +1,16 @@
 <link rel="stylesheet" href="/css/chat_box.css">
-<h1>Major Project / <%=title %></h1>
+<link rel="stylesheet" href="/css/home.css">
 
-<div>
+<div id = "home-container">
 <section id = "feed-posts">
-    <h4>Posts</h4>
     <% if(locals.user) { %>
+    <h4>Create a Post</h4>
     <form action = "/posts/create" id = "new-post-form" method = "POST">
         <textarea name = "content" cols = "30" rows = "3" placeholder= "Type Here..." required></textarea><br><br>
         <input type = "submit" value = "POST">
     </form>
     <% } %>
+    <h5>Feed</h5>
     <div id = "posts-list-container">
         <ul>
             <% for (post of posts){ %>
@@ -20,7 +21,7 @@
 </section>
 
 <section id = "user_friends">
-    <h4>Friends</h4>
+    <h4>Users</h4>
     <% for(u of all_users) { %>
         <p>
             <a href = "/users/profile/<%= u.id%>"><%=u.name%></a>

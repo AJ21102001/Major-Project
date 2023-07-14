@@ -1,0 +1,145 @@
+/* #layout-header{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+#layout-header nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    color: black;
+}
+
+#layout-header nav .website-name p {
+    margin: 5px;
+    font-size: 1.4rem;
+    font-weight: bold; 
+}
+
+#layout-header nav .auth-links ul {
+    margin: 5% 5px;
+    display: flex;
+    list-style: none; 
+}
+
+#layout-header nav .auth-links ul li {
+    font-size: 1rem;
+    margin-right: 10px; 
+}
+
+#layout-header nav a {
+    color: black;
+    text-decoration: none; 
+}
+
+#layout-header nav a:hover {
+    text-decoration: underline;
+} */
+
+/* body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+  }
+  
+  #layout-header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+  }
+  
+  #layout-header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  #layout-header .website-name p {
+    margin: 0;
+    font-size: 18px;
+  }
+  
+  #layout-header .auth-links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #layout-header .auth-links li {
+    display: inline-block;
+    margin-right: 10px;
+  } */
+
+  /* header {
+    background-color: #f8f9fa;
+    padding: 10px 0;
+  }
+  
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .navbar-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .navbar-links ul li {
+    display: inline-block;
+    margin-left: 10px;
+  } */
+
+  /* Styles for the header */
+
+/* Styles for the header */
+
+nav {
+    background-color: #f5f5f5;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .website-name a {
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .auth-links ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .auth-links li {
+    margin-left: 10px;
+  }
+  
+  .auth-links a {
+    font-size: 18px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .auth-links a:hover {
+    color: #666;
+  }
+  
+  

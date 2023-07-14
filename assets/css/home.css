@@ -1,0 +1,217 @@
+  #layout-main {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  #home-container {
+    display: flex;
+    justify-content: space-between;
+    height: 85%;
+    overflow: hidden;
+  }
+  
+  #feed-posts {
+    flex-grow: 1;
+    margin-right: 20px;
+  }
+  
+  #feed-posts h4 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  #feed-posts form {
+    margin-bottom: 20px;
+  }
+  
+  #feed-posts textarea {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+  }
+  
+  #feed-posts input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #feed-posts input[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  
+  #posts-list-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #posts-list-container li {
+    width: 90%;
+    background-color: #FAF9F6;
+    border-radius: 10px;
+    box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  #posts-list-container li small {
+    font-size: 14px;
+    color: #888;
+  }
+  
+  #posts-list-container li a.delete-post-button {
+    color: #ff4f4f;
+    text-decoration: none;
+  }
+  
+  #posts-list-container li a.delete-post-button:hover {
+    text-decoration: underline;
+  }
+  
+  #posts-list-container li p {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #333;
+    line-height: 1.5;
+  }
+  
+  #posts-list-container li p small {
+    font-size: 14px;
+    color: #888;
+  }
+  
+  #posts-list-container li small a.toggle-like-button {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  #posts-list-container li small a.toggle-like-button:hover {
+    color: #0056b3;
+    text-decoration: underline;
+  }
+  
+  .post-comments {
+    margin-top: 20px;
+  }
+  
+  .post-comments form {
+    margin-bottom: 10px;
+  }
+  
+  .post-comments form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 0px;
+    border-bottom: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .post-comments form input[type="submit"] {
+    margin-top: 4px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .post-comments form input[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  
+  .post-comments-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .post-comments-list li {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .post-comments-list li small {
+    font-size: 12px;
+    color: #888;
+  }
+
+  #user_friends,
+  #feed-posts {
+    height: 100%;
+    overflow-y: auto;
+  }
+
+  #feed-posts {
+    flex-grow: 1;
+    margin-right: 10px;
+  }
+
+  #user_friends {
+    flex-shrink: 0;
+    width: 200px;
+    margin-left: 10px;
+  }
+
+  #user_friends {
+    flex-shrink: 0;
+    width: 200px;
+    margin-left: 10px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  #user_friends h4 {
+    margin: 10px 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+  }
+
+  #user_friends p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #555;
+  }
+
+  #user_friends a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  #user_friends a:hover {
+    color: #0056b3;
+  }
+
+
+
+  
+
+
+  
+  
+  
+
+    
+    
+
+    

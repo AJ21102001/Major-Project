@@ -12,6 +12,7 @@ class ChatEngine{
 
     connectionHandler(){
         let self = this;
+        console.log(self);
 
         this.socket.on('connect', function(){
             console.log('Connection Established using Sockets');

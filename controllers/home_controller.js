@@ -12,12 +12,15 @@ module.exports.home = async function(req, res){
             populate: {
                 path: 'user'
             },
-            populate: {
-                path: 'likes'
-            }
+            // populate: {
+            //     path: 'likes'
+            // }
         }).populate('likes');
+
+        console.log(posts.comments)
         
         let users = await User.find({});
+        console.log(users);
     
         return res.render('home', {
             title: "Major Project | Home",
